@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <link rel="stylesheet" href="./alertify/css/alertify.min.css" />
+    <link href="./css/login.css" rel="stylesheet">
+    <title>Support IT</title>
+</head>
+
+<body class="text-center" >
+    <main class="form-signin" >
+        <form action="./bd/login.php" method="POST" id="formLogin">
+            <img class="mb-4" src="./img/ti-icon.png" alt="" width="82" height="82">
+            <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
+            <label for="inputUser" class="visually-hidden">Usuario</label>
+            <input type="email" id="inputUser" class="form-control" name="inputUser" placeholder="Usuario" autofocus>
+            <label for="inputPassword" class="visually-hidden">Contraseña</label>
+            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Contraseña">
+            <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="validarFormulario();" id="login">Ingresar</button>
+        </form>
+    </main>
+</body>
+
+<script src="./js/index.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+</html>
