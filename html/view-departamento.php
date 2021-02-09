@@ -17,7 +17,7 @@
     <link href="../boostrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
     <link rel="stylesheet" href="../alertify/css/alertify.min.css"/>
-    <link rel="stylesheet" href="/css/view-departamento.css">
+    <link rel="stylesheet" href="../css/view-departamento.css">
     <title>Document</title>
 </head>
 

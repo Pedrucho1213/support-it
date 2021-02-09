@@ -1,9 +1,10 @@
 (function () {
     var div = document.createElement('div');
     div.setAttribute('id', 'contenedor-carga');
-    document.body.appendChild(div);
-    var contenedor = document.getElementById("contenedor-carga");
 
+    document.body.appendChild(div);
+
+    var contenedor = document.getElementById("contenedor-carga");
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.status == 200) {
@@ -28,6 +29,7 @@ function cargarStyles() {
         holder.style.width = "100%";
         holder.style.height = "100%";
         holder.style.position = "absolute";
+        holder.style.left = "0";
         holder.style.margin = "auto";
         holder.style.zIndex = "300";
         holder.style.top = "0";
@@ -43,33 +45,66 @@ function cargarStyles() {
         sLoader.margin = "auto";
         sLoader.position = "absolute";
         sLoader.top = "27.9vh";
-        sLoader.left = "43%";
+        sLoader.left = "44%";
         loader.animate([
-            {transform: 'rotate(0deg)'},
-             { transform:'rotate(360deg)' }
-        ],{
+            { transform: 'rotate(0deg)' },
+            { transform: 'rotate(360deg)' }
+        ], {
             duration: 1000,
             iterations: Infinity
         });
     }
 }
 
-function validarFormulario(evento) {
+function showLoader() {
     var holder = document.getElementById("loader-holder");
-     
+    holder.style.display = "block";
+}
 
+function hiddeLoader() {
+    var holder = document.getElementById("loader-holder");
+    holder.style.display = "none";
+}
+
+function validarFormulario(evento) {
     evento.preventDefault();
     const usuario = document.getElementById('inputUser').value;
     const contraseña = document.getElementById('inputPassword').value;
 
     if (usuario.length == 0) {
-        alertify.error('El usuario es obligatorio');
+        alertify.warning('El usuario es obligatorio');
         return;
     }
     if (contraseña.length == 0) {
-        alertify.error('La contraseña es obligatoria');
+        alertify.warning('La contraseña es obligatoria');
         return;
     }
-    holder.style.display = "block";
-    this.submit();
+
+    showLoader();
+    setTimeout(function () {
+        enviarForm();
+    }, 2000);
+}
+
+function enviarForm() {
+    var form = document.getElementById('formLogin');
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', './bd/login.php', true);
+    var formData = new FormData(form);
+    xhr.addEventListener('load', e => {
+        if (e.target.readyState == 4 && e.target.status == 200) {
+            if (e.target.response == 'ok') {
+                alertify
+                    .alert("Bienvenido", "Exito al inicio de sesión.", function () {
+                        document.location.href = './html/home.php';
+                    });
+            } else {
+
+                alertify.alert('Error', 'Asegurese de introducir correctamente sus credenciales');
+                hiddeLoader();
+            }
+        }
+    })
+    xhr.send(formData);
+
 }

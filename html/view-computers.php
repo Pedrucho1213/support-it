@@ -14,8 +14,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/boostrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/view-computer.css">
+    <link href="../boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/view-computer.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
     <link rel="stylesheet" href="../alertify/css/alertify.min.css"/>
     <title>Document</title>
@@ -243,7 +243,7 @@
 </div>
 </body>
 
-<script src="/boostrap/js/bootstrap.min.js"></script>
+<script src="../boostrap/js/bootstrap.min.js"></script>
 <script src="../js/view-computers.js"></script>
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 

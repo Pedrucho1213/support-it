@@ -16,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
     <link rel="stylesheet" href="../alertify/css/alertify.min.css"/>
-    <link href="/boostrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/view-personal.css">
+    <link href="../boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/view-personal.css">
     <title>Document</title>
 </head>
 

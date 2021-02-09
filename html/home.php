@@ -17,7 +17,7 @@
     <link href="../boostrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
     <link rel="stylesheet" href="../alertify/css/alertify.min.css"/>
-    <link href="/css/home.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
     <title>Inicio</title>
 </head>
 
@@ -159,7 +159,7 @@
 
 
 </body>
-<script src="/boostrap/js/bootstrap.min.js"></script>
+<script src="../boostrap/js/bootstrap.min.js"></script>
 <script src="../js/home.js"></script>
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 

@@ -16,7 +16,8 @@ $filas = mysqli_num_rows($result);
 if ($filas > 0){
     session_start();
     $_SESSION['user'] = $user;
-    header("location:../html/home.php");
+    //header("location:../html/home.php");
+    echo 'ok';
 } else {
-    echo '<script language="javascript">alert("Usuario erroneo");window.location.href="../index.html"</script>' ;
+    echo 'error' ;
 }
