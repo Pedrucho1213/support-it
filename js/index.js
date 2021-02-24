@@ -92,14 +92,13 @@ function enviarForm() {
     xhr.open('POST', './bd/login.php', true);
     var formData = new FormData(form);
     xhr.addEventListener('load', e => {
-        if (e.target.readyState == 4 && e.target.status == 200) {
-            if (e.target.response == 'ok') {
+        if (e.target.readyState === 4 && e.target.status == 200) {
+            if (e.target.response === 'ok') {
                 alertify
                     .alert("Bienvenido", "Exito al inicio de sesión.", function () {
                         document.location.href = './html/home.php';
                     });
             } else {
-
                 alertify.alert('Error', 'Asegurese de introducir correctamente sus credenciales');
                 hiddeLoader();
             }

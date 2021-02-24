@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function validarFormulario(evento) {
     evento.preventDefault();
     const laptop = document.getElementById('laptop').value;
-    if (laptop == 0) {
+    if (laptop === 0) {
         alertify.error('Seleccionar un ordenador');
         return;
     }

@@ -11,79 +11,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../boostrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
-    <link rel="stylesheet" href="../alertify/css/alertify.min.css"/>
-    <link href="../css/home.css" rel="stylesheet">
-    <title>Inicio</title>
-</head>
+
 
 <body class="d-flex flex-column">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="home.php">Support IT</a>
-                <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-                    <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Departamentos
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="add-departamento.html">Registrar
-                                        departamento</a></li>
-                                <li><a class="dropdown-item" href="view-departamento.php">Modificar
-                                        departamento</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Personal
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="add-personal.php">Registrar personal</a></li>
-                                <li><a class="dropdown-item" href="view-personal.php">Modificar personal</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Computadoras
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="add-computer.php">Registrar computadora</a>
-                                </li>
-                                <li><a class="dropdown-item" href="view-computers.php">Modificar computadora</a>
-                                </li>
-                            </ul>
-                        </li>
-                    <li class="nav-item">
-                         <a class="nav-link " aria-current="page" href="./add-evento.php">Registrara evento</a>
-                    </li>
-                        
-                        
-                        
-                    </ul>
-                    <form class="d-flex" action="show-search.php" method="POST" id="formsearch">
-                        <input class="form-control me-2" type="search" placeholder="Buscar evento"
-                            aria-label="Search" id="inputsearch" name="inputsearch">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
-                    <button class="btn btn-outline-danger" onclick="window.location.href='../bd/cerrar-sesion.php'" type="button">Cerrar sesión</button>
-                </div>
-            </div>
-        </nav>
-    </header>
 
     <main class="flex-shrink-0">
         <div class="container">
@@ -165,8 +95,4 @@
 
 
 </body>
-<script src="../boostrap/js/bootstrap.min.js"></script>
-<script src="../js/home.js"></script>
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
 </html>
