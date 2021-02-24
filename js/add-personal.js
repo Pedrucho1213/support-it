@@ -6,7 +6,7 @@ function validarFormulario(evento) {
     evento.preventDefault();
     const nuevodepa = document.getElementById('departaento').value;
     
-    if (nuevodepa == 0) {
+    if (nuevodepa === 0) {
         alertify.error('Seleccionar un departamento');
         return;
     }
