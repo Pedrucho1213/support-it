@@ -72,10 +72,11 @@ if (isset($_SESSION['user'])) {
                                         </p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <form action="details-event.php" method="POST">
+                                                <form>
                                                     <input type="text" hidden="" name="id"
                                                            value="<?php echo $ver[0] ?>">
-                                                    <button type="submit" class="btn btn-sm btn-outline-primary">
+                                                    <button type="button" class="btn btn-sm btn-outline-primary"
+                                                            onclick="detailsEvent(<?php echo $ver[0] ?>)">
                                                         Detalles
                                                     </button>
                                                 </form>

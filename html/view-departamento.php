@@ -18,7 +18,7 @@ if (isset($_SESSION['user'])) {
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="navbar.php">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Visualizar departamento</li>
             </ol>
         </nav>
@@ -53,12 +53,11 @@ if (isset($_SESSION['user'])) {
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic   example">
                                     <button type="button" class="btn btn-outline-success"
-                                            onclick="showModal('<?php echo $ver[1] ?>')" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">Editar
+                                            onclick="editDepa('<?php echo $ver[1] ?>')" >Editar
                                     </button>
                                     <form id="deleteDepa">
                                         <input hidden="" type="text" value="<?php echo $ver[1] ?>" name="iddepa">
-                                        <button type="submit" class="btn btn-outline-danger">Borrar</button>
+                                        <button type="button" class="btn btn-outline-danger" onclick="deleteDepa('<?php echo $ver[1] ?>')">Borrar</button>
                                     </form>
                                 </div>
                             </td>
@@ -71,41 +70,5 @@ if (isset($_SESSION['user'])) {
         </div>
     </div>
 </main>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modificar departamento</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="../bd/edit-departamento.php" id="editdepa" method="POST">
-                <div class="modal-body">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="nuevodata" placeholder="name@example.com"
-                               name="nuevodepa">
-                        <label for="nuevodata">Nombre completo del departamento</label>
-                    </div>
-                    <input type="text" hidden="" name="cve" id="inputOculto">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
-                </div>
-            </form>
-
-        </div>
-    </div>
-</div>
-
 </body>
-
-
 </html>
-
-<script type="text/javascript">
-    function showModal(data) {
-        console.log(data)
-        document.getElementById('inputOculto').value = data;
-    }
-</script>

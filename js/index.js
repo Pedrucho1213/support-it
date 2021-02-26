@@ -1,11 +1,11 @@
 (function () {
-    var div = document.createElement('div');
+    const div = document.createElement('div');
     div.setAttribute('id', 'contenedor-carga');
 
     document.body.appendChild(div);
 
-    var contenedor = document.getElementById("contenedor-carga");
-    var xhr = new XMLHttpRequest();
+    const contenedor = document.getElementById("contenedor-carga");
+    const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.status == 200) {
             contenedor.innerHTML = xhr.responseText;
@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 function cargarStyles() {
-    var holder = document.getElementById("loader-holder");
-    var loader = document.getElementById("loader");
+    const holder = document.getElementById("loader-holder");
+    const loader = document.getElementById("loader");
 
     if (loader) {
-        var sLoader = loader.style;
+        const sLoader = loader.style;
         holder.style.width = "100%";
         holder.style.height = "100%";
         holder.style.position = "absolute";
@@ -57,12 +57,12 @@ function cargarStyles() {
 }
 
 function showLoader() {
-    var holder = document.getElementById("loader-holder");
+    const holder = document.getElementById("loader-holder");
     holder.style.display = "block";
 }
 
 function hiddeLoader() {
-    var holder = document.getElementById("loader-holder");
+    const holder = document.getElementById("loader-holder");
     holder.style.display = "none";
 }
 
@@ -87,16 +87,16 @@ function validarFormulario(evento) {
 }
 
 function enviarForm() {
-    var form = document.getElementById('formLogin');
+    const form = document.getElementById('formLogin');
     const xhr = new XMLHttpRequest();
     xhr.open('POST', './bd/login.php', true);
-    var formData = new FormData(form);
+    const formData = new FormData(form);
     xhr.addEventListener('load', e => {
-        if (e.target.readyState === 4 && e.target.status == 200) {
+        if (e.target.readyState === 4 && e.target.status === 200) {
             if (e.target.response === 'ok') {
                 alertify
                     .alert("Bienvenido", "Exito al inicio de sesión.", function () {
-                        document.location.href = './html/home.php';
+                        document.location.href = './html/navbar.php';
                     });
             } else {
                 alertify.alert('Error', 'Asegurese de introducir correctamente sus credenciales');

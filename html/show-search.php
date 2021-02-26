@@ -11,15 +11,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <body class="d-flex flex-column">
-
     <main class="flex-shrink-0">
         <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="navbar.php">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Resultados de la busqueda</li>
             </ol>
         </nav>
@@ -75,9 +72,13 @@
                                         </p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <form action="details-event.php" method="POST">
-                                                    <input type="text" hidden="" name="id" value="<?php echo $ver[0] ?>">
-                                                    <button type="submit" class="btn btn-sm btn-outline-primary">Detalles</button>
+                                                <form>
+                                                    <input type="text" hidden="" name="id"
+                                                           value="<?php echo $ver[0] ?>">
+                                                    <button type="button" class="btn btn-sm btn-outline-primary"
+                                                            onclick="detailsEvent(<?php echo $ver[0] ?>)">
+                                                        Detalles
+                                                    </button>
                                                 </form>
                                             </div>
                                             <small class="text-muted">Dentro de <?php echo $ver[6] ?> días</small>
@@ -92,7 +93,5 @@
             </div>
         </div>
     </main>
-
-
 </body>
 </html>

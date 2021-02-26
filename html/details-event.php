@@ -12,81 +12,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../css/picnic.min.css">
-
     <link rel="stylesheet" href="../css/details-event.css">
-    <link href="../boostrap/css/bootstrap.min.css" rel="stylesheet">
     <title>Detalles</title>
 </head>
 
 <body class="d-flex flex-column ">
-
-<header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="home.php">Support IT</a>
-                <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-                    <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Departamentos
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="add-departamento.html">Registrar
-                                        departamento</a></li>
-                                <li><a class="dropdown-item" href="view-departamento.php">Modificar
-                                        departamento</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Personal
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="add-personal.php">Registrar personal</a></li>
-                                <li><a class="dropdown-item" href="view-personal.php">Modificar personal</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Computadoras
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="add-computer.php">Registrar computadora</a>
-                                </li>
-                                <li><a class="dropdown-item" href="view-computers.php">Modificar computadora</a>
-                                </li>
-                            </ul>
-                        </li>
-                    <li class="nav-item">
-                         <a class="nav-link " aria-current="page" href="./add-evento.php">Registrara evento</a>
-                    </li>
-                        
-                        
-                        
-                    </ul>
-                    <button class="btn btn-outline-danger" onclick="window.location.href='../bd/cerrar-sesion.php'" type="button">Cerrar sesión</button>
-                </div>
-            </div>
-        </nav>
-</header>
-
-
     <main class="flex-shrink-0">
         <div class="container">
         <ul class="breadcrumb">
-  <li><a href="home.php">Home</a></li>
+  <li><a href="navbar.php">Home</a></li>
   <li>Detalles del evento</li>
 </ul> 
             <h1 class="mt-2"> Detalles del evento programado</h1>
@@ -122,9 +57,7 @@
                     e.cve_evento = '$cveEvento'";
                     $result = mysqli_query($conexion,$sql);
                     while ($ver = mysqli_fetch_row($result)){
-
             ?>
-               
             <div class="galeria-container text-center">
                 <div class="tabs two">
                     <input id='tab-1' type='radio' name='tabgroupB' checked />
@@ -141,16 +74,11 @@
                     </div>
                 </div>
             </div>
-
             <div class="container-sm py-5 text-centered">
-            
             <h3>Datos generales del evento</h3>
             <table class="table  table-striped table-bordered border-primary">
-
                 <tbody>
-                
                     <tr>
-                        
                          <td>Nombre del evento</td>
                          <td><?php echo $ver[1] ?></td>
                     </tr>
@@ -162,7 +90,6 @@
                          <td>Descripcción del evento</td>
                          <td><?php echo $ver[3] ?></td>
                     </tr>
-
                     <tr>
                          <td>Marca del equipo</td>
                          <td><?php echo $ver[6] ?></td>
@@ -183,7 +110,6 @@
                          <td>Tipo de disco duro</td>
                          <td><?php echo $ver[1] ?></td>
                     </tr>
-                    
                 </tbody>
             </table>
             <div class="container-sm py-5">
@@ -213,17 +139,9 @@
                 </tbody>
             </table>
             </div>
-
-
         </div>
-
             <?php } ?>
-
         </div>
-
     </main>
-
 </body>
-<script src="../js/details-event.js"></script>
-<script src="../boostrap/js/bootstrap.min.js"></script>
 </html>

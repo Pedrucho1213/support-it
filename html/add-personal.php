@@ -18,7 +18,7 @@
         <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                 <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+                 <li class="breadcrumb-item"><a href="navbar.php">Home</a></li>
                  <li class="breadcrumb-item active" aria-current="page">Registrar personal</li>
             </ol>
         </nav>
@@ -29,7 +29,7 @@
                 <p>Para registrar personal primero debe registrar los departamentos existentes dentro de la mepresa.</p>
             </div>
             <div class="container">
-                <form action="../bd/add-personal.php" method="POST" id="formperson">
+                <form id="formperson">
                     <div class="row">
                         <div class="col">
                             <div class="form-floating mb-3">
@@ -84,8 +84,4 @@
     </main>
 
 </body>
-<script src="../boostrap/js/bootstrap.min.js"></script>
-<script src="../js/add-personal.js"></script>
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
 </html>

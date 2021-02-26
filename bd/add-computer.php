@@ -10,17 +10,15 @@ $disco = $_POST['disco'];
 $tipoDisco = $_POST['tipo'];
 $foto = $_FILES['formFile']['name'];
 
-if(isset($_FILES['formFile'])) {
+if (isset($_FILES['formFile'])) {
     $temp = $_FILES['formFile']['tmp_name'];
-    if (move_uploaded_file($temp, '../img/'.$foto)){
-        chmod('../img/'.$foto, 0777);
+    if (move_uploaded_file($temp, '../img/' . $foto)) {
+        chmod('../img/' . $foto, 0777);
     }
 }
 
 $sql = "INSERT INTO laptop (marca, serie, ram, disco, tipo, cve_operador, fotografia) VALUES ('$marca', '$serie','$ram','$disco','$tipoDisco', '$personal',  '$foto')";
 
-$result = mysqli_query($conexion,$sql);
+$result = mysqli_query($conexion, $sql);
 
-echo '<script language="javascript">alert("Los datos fueron registrados correctamente");window.location.href="../html/add-computer.php"</script>' ;
-
-?>
+echo 'ok';

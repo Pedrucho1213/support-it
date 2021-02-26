@@ -9,8 +9,6 @@ $correo = $_POST['correo'];
 $departamento = $_POST['departamento'];
 
 $sql = "INSERT INTO personal (nombre, apellido, curp, telefono, correo, cve_departamento) VALUES ('$nombres','$apellidos','$curp','$telefono','$correo', '$departamento')";
-$result = mysqli_query($conexion,$sql);
+$result = mysqli_query($conexion, $sql);
 
-echo '<script language="javascript">alert("Los datos fueron registrados correctamente");window.location.href="../html/add-personal.php"</script>' ;
-
-?>
+echo 'ok';

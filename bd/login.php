@@ -8,16 +8,16 @@ require_once "conexion.php";
 $sql = "SELECT usuario, contraseña from user where usuario = '$user' AND
 contraseña = '$password'";
 
-$result = mysqli_query($conexion,$sql);
+$result = mysqli_query($conexion, $sql);
 
 $filas = mysqli_num_rows($result);
 
 
-if ($filas > 0){
+if ($filas > 0) {
     session_start();
     $_SESSION['user'] = $user;
     //header("location:../html/home.php");
     echo 'ok';
 } else {
-    echo 'error' ;
+    echo 'error';
 }
