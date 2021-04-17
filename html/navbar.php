@@ -1,3 +1,13 @@
+
+<?php
+session_start();
+
+if (isset($_SESSION['user'])) {
+
+} else {
+    echo '<script language="javascript">alert("Se requiere el inicio de sesión");window.location.href="../bd/cerrar-sesion.php"</script>';
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>

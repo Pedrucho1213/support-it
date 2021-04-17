@@ -45,32 +45,32 @@ addEvento.addEventListener('click', function () {
     addEvent();
 })
 
-window.addEventListener('load', function () {
-    document.getElementById('eventSearch').addEventListener('submit', validarFormularioBusqueda);
-})
 
 
-function validarFormularioBusqueda(evento) {
-    evento.preventDefault();
-    const input = document.getElementById('inputsearch').value;
+function validarFormularioBusqueda() {
+    document.getElementById('eventSearch').addEventListener('submit', function (evento){
+        evento.preventDefault();
+        const input = document.getElementById('inputsearch').value;
 
-    if (input.length === 0) {
-        alertify.error('Imposible realizar una busqueda con el campo vacio');
-        return;
-    }
-
-    const xhr = new XMLHttpRequest();
-    const search = document.getElementById('eventSearch');
-    const formData = new FormData(search);
-
-    xhr.addEventListener('load', e => {
-        if (e.target.readyState === 4 && e.target.status === 200) {
-            contenedorPrincipal.innerHTML = e.target.response;
-            xhr.abort();
+        if (input.length === 0) {
+            alertify.error('Imposible realizar una busqueda con el campo vacio');
+            return;
         }
-    })
-    xhr.open('POST', './show-search.php', true);
-    xhr.send(formData);
+
+        const xhr = new XMLHttpRequest();
+        const search = document.getElementById('eventSearch');
+        const formData = new FormData(search);
+
+        xhr.addEventListener('load', e => {
+            if (e.target.readyState === 4 && e.target.status === 200) {
+                contenedorPrincipal.innerHTML = e.target.response;
+                xhr.abort();
+            }
+        })
+        xhr.open('POST', './show-search.php', true);
+        xhr.send(formData);
+    });
+
 }
 
 function homePage() {
@@ -78,6 +78,8 @@ function homePage() {
     xhr.onreadystatechange = function () {
         if (xhr.status === 200 && xhr.readyState === 4) {
             contenedorPrincipal.innerHTML = xhr.responseText;
+            validarFormularioBusqueda();
+
             xhr.abort();
         }
     }
