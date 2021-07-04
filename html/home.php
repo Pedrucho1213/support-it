@@ -7,6 +7,7 @@ if (isset($_SESSION['user'])) {
     echo '<script language="javascript">alert("Se requiere el inicio de sesión");window.location.href="../bd/cerrar-sesion.php"</script>';
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
